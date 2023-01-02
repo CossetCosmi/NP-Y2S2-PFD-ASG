@@ -15,13 +15,14 @@ CREATE TABLE [Card] (
     [Id]        CHAR(16)      NOT NULL,
     [AccountId] INTEGER       NOT NULL,
     [CVV]       CHAR(3)       NOT NULL,
+    [IssueOn]   SMALLDATETIME NOT NULL,
     [ExpireOn]  SMALLDATETIME NOT NULL,
     [Balance]   SMALLMONEY    NOT NULL,
     [Status]    VARCHAR(10)   NOT NULL,
-    [PIN]       CHAR(44)      NOT NULL,
+    [PIN]       CHAR(6)       NOT NULL,
     CONSTRAINT [PK_Card] PRIMARY KEY NONCLUSTERED ([Id] ASC),
     CONSTRAINT [FK_Card_AccountId] FOREIGN KEY ([AccountId]) REFERENCES [Account] ([Id]),
-    CONSTRAINT [CHK_Card_Status] CHECK ([Status] IN ('PENDING', 'ACTIVE', 'SUSPENDED')),
+    CONSTRAINT [CHK_Card_Status] CHECK ([Status] IN ('PENDING', 'ACTIVE', 'SUSPENDED', 'EXPIRED')),
 )
 
 CREATE TABLE [Transaction] (
@@ -45,5 +46,5 @@ VALUES (0, 'DEFAULT', 'DEFAULT', 'DEFAULT');
 SET IDENTITY_INSERT [Account] OFF;
 
 
-INSERT INTO [Card] ([Id], [AccountId], [CVV], [ExpireOn], [Balance], [Status], [PIN])
-VALUES ('0000000000000000', 0, '000', '1900-01-01T00:00:00', 0, 'SUSPENDED', '000000');
+INSERT INTO [Card] ([Id], [AccountId], [CVV], [IssueOn], [ExpireOn], [Balance], [Status], [PIN])
+VALUES ('0000000000000000', 0, '000', '1900-01-01T00:00:00', '1900-01-01T00:00:00', 0, 'SUSPENDED', '000000');
