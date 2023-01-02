@@ -16,7 +16,7 @@
   <Properties>
     <DisplayName>PFD</DisplayName>
     <PublisherDisplayName>Cosmi</PublisherDisplayName>
-    <Logo>Assets\StoreLogo.png</Logo>
+    <Logo>Assets\Images\Archive\StoreLogo.png</Logo>
   </Properties>
 
   <Dependencies>
@@ -33,12 +33,17 @@
       EntryPoint="PFD.App">
       <uap:VisualElements
         DisplayName="PFD"
-        Square150x150Logo="Assets\Square150x150Logo.png"
-        Square44x44Logo="Assets\Square44x44Logo.png"
+        Square150x150Logo="Assets\Images\Archive\Square150x150Logo.png"
+        Square44x44Logo="Assets\Images\Archive\Square44x44Logo.png"
         Description="PFD"
         BackgroundColor="transparent">
-        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png"/>
-        <uap:SplashScreen Image="Assets\SplashScreen.png" />
+        <uap:DefaultTile Wide310x150Logo="Assets\Images\Archive\Wide310x150Logo.png">
+          <uap:ShowNameOnTiles>
+            <uap:ShowOn Tile="square150x150Logo"/>
+            <uap:ShowOn Tile="wide310x150Logo"/>
+          </uap:ShowNameOnTiles>
+        </uap:DefaultTile >
+        <uap:SplashScreen Image="Assets\Images\Archive\SplashScreen.png" />
       </uap:VisualElements>
     </Application>
   </Applications>
