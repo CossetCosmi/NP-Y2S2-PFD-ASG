@@ -27,6 +27,7 @@ CREATE TABLE [Card] (
 
 CREATE TABLE [Transaction] (
     [Id]        INTEGER IDENTITY (1, 1) NOT NULL,
+    [Card]      CHAR(16)                NOT NULL,
     [Amount]    SMALLMONEY              NOT NULL,
     [CreateOn]  SMALLDATETIME           NOT NULL,
     [Type]      VARCHAR(10)             NOT NULL,
