@@ -69,12 +69,7 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <!-- Footer Content -->
-            <Button x:Name="BtnBack" Grid.Column="1" Background="White" BorderBrush="Black" CornerRadius="15,15,15,15" Width="350" Height="90">
-                <TextBlock Text="BACK" FontWeight="SemiBold" FontSize="32" Foreground="#FFE53935" FocusVisualPrimaryBrush="#FFE53935" VerticalAlignment="Center"/>
-            </Button>
-            <Button x:Name="BtnContinue" Grid.Column="1" Background="White" BorderBrush="Black" CornerRadius="15,15,15,15" Width="350" Height="90" HorizontalAlignment="Right">
-                <TextBlock Text="CONTINUE" FontWeight="SemiBold" FontSize="32" Foreground="#FFE53935" FocusVisualPrimaryBrush="#FFE53935" VerticalAlignment="Center"/>
-            </Button>
+            <TextBlock x:Name="TbSpeech" Grid.Column="1" FontSize="32" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             <!-- End Footer Content -->
         </Grid>
         <!-- End Footer-->
