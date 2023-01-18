@@ -1,0 +1,82 @@
+﻿<Page
+    x:Class="PFD.Base"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PFD"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header Row -->
+        <Grid>
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#BFEE534F"/>
+                    <GradientStop Color="#00D9D9D9" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <!-- Header Content -->
+            <StackPanel Grid.Column="1" VerticalAlignment="Bottom">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Welcome to" FontSize="32" VerticalAlignment="Center" FontWeight="Medium"/>
+                    <Image Source="/Assets/Images/OCBC Logo.png" RenderTransformOrigin="0.5,0.5" Margin="-50,0,0,0">
+                        <Image.RenderTransform>
+                            <CompositeTransform ScaleX="0.75" ScaleY="0.75"/>
+                        </Image.RenderTransform>
+                    </Image>
+                </StackPanel>
+                <TextBlock Text="?????????????????????????????????????????????" FontSize="48" FontWeight="SemiBold"/>
+            </StackPanel>
+            <Button x:Name="BtnLanguage" Grid.Column="2" HorizontalAlignment="Right" Background="White" BorderBrush="Black" CornerRadius="15,15,15,15" Width="350" Height="90" Margin="0,50,0,0" >
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Assets/Images/Change Language Logo.png"/>
+                    <TextBlock Text="Change Language" FontWeight="SemiBold" FontSize="24" Foreground="#FFE53935" FocusVisualPrimaryBrush="#FFE53935" VerticalAlignment="Center"/>
+                </StackPanel>
+            </Button>
+            <!-- End Header Content -->
+        </Grid>
+        <!-- End Header Row -->
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="8*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <!-- Body Content -->
+            <!-- End Body Content -->
+        </Grid>
+
+        <!-- Footer -->
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="8*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <!-- Footer Content -->
+            <Button x:Name="BtnBack" Grid.Column="1" Background="White" BorderBrush="Black" CornerRadius="15,15,15,15" Width="350" Height="90">
+                <TextBlock Text="BACK" FontWeight="SemiBold" FontSize="32" Foreground="#FFE53935" FocusVisualPrimaryBrush="#FFE53935" VerticalAlignment="Center"/>
+            </Button>
+            <Button x:Name="BtnContinue" Grid.Column="1" Background="White" BorderBrush="Black" CornerRadius="15,15,15,15" Width="350" Height="90" HorizontalAlignment="Right">
+                <TextBlock Text="CONTINUE" FontWeight="SemiBold" FontSize="32" Foreground="#FFE53935" FocusVisualPrimaryBrush="#FFE53935" VerticalAlignment="Center"/>
+            </Button>
+            <!-- End Footer Content -->
+        </Grid>
+        <!-- End Footer-->
+    </Grid>
+</Page>
