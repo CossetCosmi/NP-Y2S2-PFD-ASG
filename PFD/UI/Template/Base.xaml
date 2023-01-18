@@ -30,7 +30,7 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <!-- Header Content -->
-            <StackPanel Grid.Column="1" VerticalAlignment="Bottom">
+            <StackPanel Grid.Column="1" VerticalAlignment="Center">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Welcome to" FontSize="32" VerticalAlignment="Center" FontWeight="Medium"/>
                     <Image Source="/Assets/Images/OCBC Logo.png" RenderTransformOrigin="0.5,0.5" Margin="-50,0,0,0">
