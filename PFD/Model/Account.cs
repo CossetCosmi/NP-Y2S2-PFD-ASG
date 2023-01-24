@@ -1,4 +1,6 @@
-﻿namespace PFD.Model
+﻿using PFD.Model.Interface;
+
+namespace PFD.Model
 {
     internal sealed class Account : IModel<int>
     {

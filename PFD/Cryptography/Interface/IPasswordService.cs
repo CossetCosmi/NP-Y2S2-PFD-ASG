@@ -1,4 +1,4 @@
-﻿namespace PFD.Cryptography
+﻿namespace PFD.Cryptography.Interface
 {
     internal interface IPasswordService
     {

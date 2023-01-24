@@ -1,4 +1,4 @@
-﻿namespace PFD.Model
+﻿namespace PFD.Model.Interface
 {
     internal interface IModel<T>
     {
