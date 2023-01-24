@@ -112,6 +112,8 @@ namespace PFD.UI.Authentication
                 {
                     SpeechTextBuilder.Clear();
                     tbSpeech.Text = $"{e.Result.Text}";
+
+                    SpeechSuspiciousDetector.Instance.IsSuspicious(e.Result.Text);
                 });
             }
         }
