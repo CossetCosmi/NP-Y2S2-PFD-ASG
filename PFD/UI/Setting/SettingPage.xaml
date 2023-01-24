@@ -1,0 +1,91 @@
+﻿<Page
+    x:Class="PFD.UI.Setting.SettingPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid x:Name="gMain"
+          VerticalAlignment="Center"
+          Margin="100,0,100,0">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="4.5*"/>
+            <ColumnDefinition Width="5.5*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2.5*"/>
+            <RowDefinition Height="2.5*"/>
+            <RowDefinition Height="2.5*"/>
+            <RowDefinition Height="2.5*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock x:Name="tbTitle"
+                   Grid.Row="0"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="2"
+                   Text="Setting(s)"
+                   FontSize="32"
+                   TextAlignment="Center"
+                   Margin="0,20,0,0"/>
+
+        <CheckBox x:Name="cbSpeech" 
+                  Grid.Row="1"
+                  Grid.Column="0"
+                  Grid.ColumnSpan="2"
+                  HorizontalAlignment="Left" 
+                  VerticalAlignment="Center"
+                  Content="Show/Hide Speech"
+                  Margin="0,20,0,0"/>
+
+        <TextBlock x:Name="tbAccount"
+                   Grid.Row="2"
+                   Grid.Column="0"
+                   HorizontalAlignment="Left" 
+                   VerticalAlignment="Center"
+                   Text="Account"
+                   Margin="0,20,0,0"/>
+
+        <ComboBox x:Name="cbAccount"
+                  Grid.Row="2"
+                  Grid.Column="1"
+                  HorizontalAlignment="Stretch" 
+                  VerticalAlignment="Center"
+                  ItemsSource="{x:Bind AccountList, Mode=OneTime}"
+                  SelectionChanged="cbAccount_SelectionChanged"
+                  Margin="0,20,0,0">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Username}"/>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+
+        <TextBlock x:Name="tbCard"
+                   Grid.Row="3"
+                   Grid.Column="0"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Center"
+                   Text="Card"
+                   Margin="0,20,0,0"/>
+
+        <ComboBox x:Name="cbCard"
+                  Grid.Row="3"
+                  Grid.Column="1"
+                  HorizontalAlignment="Stretch" 
+                  VerticalAlignment="Center"
+                  ItemsSource="{x:Bind CardList, Mode=OneWay}"
+                  SelectionChanged="cbCard_SelectionChanged"
+                  Margin="0,20,0,0"
+                  IsEnabled="False">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Id}"/>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+    </Grid>
+</Page>
