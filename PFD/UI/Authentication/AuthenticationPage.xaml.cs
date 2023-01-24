@@ -100,10 +100,7 @@ namespace PFD.UI.Authentication
 
         private async void Recognizer_StateChanged(SpeechRecognizer recognizer, SpeechRecognizerStateChangedEventArgs e) => await Dispatcher.RunAsync(CoreDispatcherPriority.Low, () => tbMicrophoneStatus.Text = $"Microphone: {e.State}");
 
-        private async void Recognizer_HypothesisGenerated(SpeechRecognizer recognizer, SpeechRecognitionHypothesisGeneratedEventArgs e) => await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
-        {
-            tbSpeech.Text = $"{SpeechTextBuilder} {e.Hypothesis.Text} ...";
-        });
+        private async void Recognizer_HypothesisGenerated(SpeechRecognizer recognizer, SpeechRecognitionHypothesisGeneratedEventArgs e) => await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => tbSpeech.Text = $"{SpeechTextBuilder} {e.Hypothesis.Text} ...");
 
         private async void RecognizerSession_ResultGenerated(SpeechContinuousRecognitionSession session, SpeechContinuousRecognitionResultGeneratedEventArgs e)
         {
