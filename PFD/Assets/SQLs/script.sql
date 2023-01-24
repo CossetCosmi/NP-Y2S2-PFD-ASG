@@ -26,26 +26,19 @@ CREATE TABLE [Card] (
 )
 
 CREATE TABLE [Transaction] (
-    [Id]        INTEGER IDENTITY (1, 1) NOT NULL,
-    [Card]      CHAR(16)                NOT NULL,
-    [Amount]    SMALLMONEY              NOT NULL,
-    [CreateOn]  SMALLDATETIME           NOT NULL,
-    [Type]      VARCHAR(10)             NOT NULL,
-    [Status]    VARCHAR(10)             NOT NULL,
-    [Recipient] CHAR(16) DEFAULT '0000000000000000',
+    [Id]       INTEGER IDENTITY (1, 1) NOT NULL,
+    [Card]     CHAR(16)                NOT NULL,
+    [Amount]   SMALLMONEY              NOT NULL,
+    [CreateOn] SMALLDATETIME           NOT NULL,
+    [Type]     VARCHAR(15)             NOT NULL,
+    [Status]   VARCHAR(10)             NOT NULL,
+    [To]       CHAR(16)                NULL,
+    [From]     CHAR(16)                NULL,
+    [ATM]      INT                     NULL,
     CONSTRAINT [PK_Transaction] PRIMARY KEY NONCLUSTERED ([Id] ASC),
-    CONSTRAINT [FK_Transaction_Recipient] FOREIGN KEY ([Recipient]) REFERENCES [Card] ([Id]),
-    CONSTRAINT [CHK_Transaction_Type] CHECK ([Type] IN ('DEPOSIT', 'WITHDRAW', 'TRANSFER')),
+    CONSTRAINT [FK_Transaction_Card] FOREIGN KEY ([Card]) REFERENCES [Card] ([Id]),
+    CONSTRAINT [FK_Transaction_To] FOREIGN KEY ([To]) REFERENCES [Card] ([Id]),
+    CONSTRAINT [FK_Transaction_From] FOREIGN KEY ([From]) REFERENCES [Card] ([Id]),
+    CONSTRAINT [CHK_Transaction_Type] CHECK ([Type] IN ('DEPOSIT', 'WITHDRAW', 'TRANSFER (IN)', 'TRANSFER (OUT)')),
     CONSTRAINT [CHK_Transaction_Status] CHECK ([Status] IN ('PENDING', 'REJECTED', 'COMPLETED')),
 )
-
-SET IDENTITY_INSERT [Account] ON;
-
-INSERT INTO [Account]([Id], [Username], [Password], [Salt])
-VALUES (0, 'DEFAULT', 'DEFAULT', 'DEFAULT');
-
-SET IDENTITY_INSERT [Account] OFF;
-
-
-INSERT INTO [Card] ([Id], [AccountId], [CVV], [IssueOn], [ExpireOn], [Balance], [Status], [PIN])
-VALUES ('0000000000000000', 0, '000', '1900-01-01T00:00:00', '1900-01-01T00:00:00', 0, 'SUSPENDED', '000000');
