@@ -2,6 +2,6 @@
 {
     internal interface IModel<T>
     {
-        T ID { get; set; }
+        T Id { get; set; }
     }
 }
