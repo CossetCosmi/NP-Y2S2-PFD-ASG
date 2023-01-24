@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PFD.Repository.Interface;
+using System;
 using System.Data.SqlClient;
 
 namespace PFD.Repository.RowMapper

@@ -1,6 +1,6 @@
 ﻿using System.Data.SqlClient;
 
-namespace PFD.Repository.RowMapper
+namespace PFD.Repository.Interface
 {
     internal interface IRowMapper<MODEL>
     {
