@@ -1,0 +1,55 @@
+﻿<Page
+    x:Class="PFD.UI.Authentication.AuthenticationPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="9.5*"/>
+        </Grid.RowDefinitions>
+
+        <!--#region Page Header -->
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <Viewbox>
+                <ToggleButton x:Name="btnMenu"
+                              Click="BtnMenu_Click"
+                              Style="{StaticResource Auth_Menu_MenuButtonStyle}">
+                </ToggleButton>
+            </Viewbox>
+            <TextBlock x:Name="tbPageTitle"
+                       Text="&lt;Page Title&gt;"
+                       Style="{StaticResource PageTitleStyle}"/>
+        </StackPanel>
+        <!--#endregion Page Header -->
+
+        <!--#region Page Content -->
+        <SplitView x:Name="svAuthentication" Grid.Row="1" DisplayMode="Inline">
+            <SplitView.Pane>
+                <RelativePanel>
+                    <TextBlock x:Name="tbMenuTitle"
+                               Text="Setting(s)"
+                               Style="{StaticResource Auth_Menu_TitleStyle}"/>
+                    <StackPanel Style="{StaticResource Auth_Menu_ContentStyle}">
+                        <CheckBox x:Name="cbSpeechText"
+                                  IsChecked="{x:Bind IsSpeechVisible}"
+                                  Content="Show/Hide Speech"
+                                  Click="CbSpeechText_Click"
+                                  Style="{StaticResource Auth_Menu_SettingItemStyle}"/>
+                    </StackPanel>
+                </RelativePanel>
+            </SplitView.Pane>
+            <SplitView.Content>
+                <RelativePanel>
+                    <Frame x:Name="fvContent" Style="{StaticResource Auth_FrameContentStyle}"/>
+                    <TextBlock x:Name="tbSpeech" Style="{StaticResource Auth_SpeechTextStyle}"/>
+                </RelativePanel>
+            </SplitView.Content>
+        </SplitView>
+        <!--#endregion Page Content -->
+    </Grid>
+</Page>
