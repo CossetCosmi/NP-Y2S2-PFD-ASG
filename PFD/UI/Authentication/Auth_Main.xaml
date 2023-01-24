@@ -18,13 +18,31 @@
             <ColumnDefinition Width="5*"/>
         </Grid.ColumnDefinitions>
 
-        <Button x:Name="BtnAuthByCard" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="450" Height="600" Background="#FFEE534F" CornerRadius="10,10,10,10">
+        <Button x:Name="btnAuthByCard"
+                Grid.Row="0" 
+                Grid.Column="0" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center" 
+                Width="450" 
+                Height="600"
+                Background="#FFEE534F" 
+                CornerRadius="10,10,10,10"
+                Click="BtnAuthByCard_Click">
             <StackPanel>
                 <Image Source="/Assets/Images/Insert Logo.png"/>
                 <TextBlock Text="Insert Card" FontSize="40" FontWeight="Bold" HorizontalAlignment="Center" Foreground="White"/>
             </StackPanel>
         </Button>
-        <Button x:Name="BtnAuthByQr" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="450" Height="600" Background="#FFEE534F" CornerRadius="10,10,10,10">
+        <Button x:Name="btnAuthByQr" 
+                Grid.Row="0" 
+                Grid.Column="1" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center"
+                Width="450" 
+                Height="600" 
+                Background="#FFEE534F" 
+                CornerRadius="10,10,10,10"
+                Click="BtnAuthByQr_Click">
             <StackPanel>
                 <Image Source="/Assets/Images/Scan Logo.png"/>
                 <TextBlock Text="Insert Card" FontSize="40" FontWeight="Bold" HorizontalAlignment="Center" Foreground="White"/>

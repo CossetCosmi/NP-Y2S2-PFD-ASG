@@ -131,8 +131,20 @@
     <Compile Include="UI\Authentication\AuthenticationPage.xaml.cs">
       <DependentUpon>AuthenticationPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UI\Authentication\Auth_Card.xaml.cs">
+      <DependentUpon>Auth_Card.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Authentication\Auth_Fingerprint.xaml.cs">
+      <DependentUpon>Auth_Fingerprint.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UI\Authentication\Auth_Main.xaml.cs">
       <DependentUpon>Auth_Main.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Authentication\Auth_Pin.xaml.cs">
+      <DependentUpon>Auth_Pin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Authentication\Auth_Qr.xaml.cs">
+      <DependentUpon>Auth_Qr.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -190,7 +202,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UI\Authentication\Auth_Card.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Authentication\Auth_Fingerprint.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UI\Authentication\Auth_Main.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Authentication\Auth_Pin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Authentication\Auth_Qr.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

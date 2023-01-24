@@ -24,5 +24,13 @@ namespace PFD.UI.Authentication
         private void Hide_TbSpeech() => tbSpeech.Visibility = Visibility.Collapsed;
         private void Show_TbSpeech() => tbSpeech.Visibility = Visibility.Visible;
         #endregion Show/Hide Control
+
+        public void UpdatePageTitle(string title) => tbPageTitle.Text = title;
+        public void UpdateSubpageTitle(string title) => tbSubpageTitle.Text = title;
+
+        #region QR Page
+        private void BtnQr_Click(object sender, RoutedEventArgs e) => btnQr.Visibility = Visibility.Collapsed;
+        public void Show_QrPage_Popup() => btnQr.Visibility = Visibility.Visible;
+        #endregion
     }
 }

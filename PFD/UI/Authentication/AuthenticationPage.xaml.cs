@@ -12,11 +12,17 @@ namespace PFD.UI.Authentication
 {
     internal sealed partial class AuthenticationPage : Page
     {
+        public static AuthenticationPage Current;
+
         private SpeechRecognizer SpeechRecognizer;
         private bool IsListening { get; set; } = false;
         private StringBuilder SpeechTextBuilder { get; } = new StringBuilder();
 
-        public AuthenticationPage() => InitializeComponent();
+        public AuthenticationPage()
+        {
+            InitializeComponent();
+            Current = this;
+        }
 
         protected async override void OnNavigatedTo(NavigationEventArgs e)
         {

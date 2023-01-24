@@ -71,7 +71,7 @@
 
                         <StackPanel Grid.Row="0" Grid.Column="1" VerticalAlignment="Bottom" Margin="0,0,0,10">
                             <Image Source="/Assets/Images/OCBC Logo.png" Height="45" HorizontalAlignment="Left"/>
-                            <TextBlock x:Name="TbSubpageTitle" Text="&lt;Page Title&gt;" FontSize="48" FontWeight="SemiBold"/>
+                            <TextBlock x:Name="tbSubpageTitle" Text="&lt;Page Title&gt;" FontSize="48" FontWeight="SemiBold"/>
                         </StackPanel>
 
                         <Button x:Name="btnLanguage"
@@ -98,5 +98,29 @@
             </SplitView.Content>
         </SplitView>
         <!--#endregion Page Content -->
+        
+        <!--#region Subpage Popup Content -->
+        <Button x:Name="btnQr"
+                Grid.Row="0"
+                Grid.Column="0"
+                Grid.RowSpan="2"
+                Background="#7F000000" 
+                Canvas.ZIndex="1" 
+                Visibility="Collapsed" 
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                Click="BtnQr_Click">
+            <Grid Background="White" CornerRadius="25,25,25,25" Width="1200" Height="700">
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Image Source="/Assets/Images/QR Code Logo.png" Width="500" Height="500" RenderTransformOrigin="0.5,0.5">
+                        <Image.RenderTransform>
+                            <CompositeTransform ScaleX="1.5" ScaleY="1.5"/>
+                        </Image.RenderTransform>
+                    </Image>
+                    <TextBlock Text="Click anywhere on the screen to return" FontSize="32" FontWeight="Medium" HorizontalAlignment="Center" Margin="0,20,0,0"/>
+                </StackPanel>
+            </Grid>
+        </Button>
+        <!--#endregion Subpage Popup Content-->
     </Grid>
 </Page>
