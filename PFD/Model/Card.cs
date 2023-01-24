@@ -2,7 +2,7 @@
 
 namespace PFD.Model
 {
-    internal class Card : IModel<string>
+    internal sealed class Card : IModel<string>
     {
         public string Id { get; set; }
         public int AccountId { get; set; }

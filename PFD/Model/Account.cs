@@ -1,6 +1,6 @@
 ﻿namespace PFD.Model
 {
-    internal class Account : IModel<int>
+    internal sealed class Account : IModel<int>
     {
         public int Id { get; set; }
         public string Username { get; set; }

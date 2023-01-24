@@ -123,10 +123,17 @@
     <Compile Include="Component\SpeechSuspiciousDetector.cs" />
     <Compile Include="Cryptography\PasswordService.cs" />
     <Compile Include="Cryptography\IPasswordService.cs" />
+    <Compile Include="Model\Account.cs" />
+    <Compile Include="Model\Card.cs" />
     <Compile Include="Model\IModel.cs" />
+    <Compile Include="Model\Transaction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\AccountRepository.cs" />
+    <Compile Include="Repository\RowMapper\AccountRowMapper.cs" />
+    <Compile Include="Repository\RowMapper\CardRowMapper.cs" />
     <Compile Include="Repository\RowMapper\IRowMapper.cs" />
     <Compile Include="Repository\RowMapper\RowMapper.cs" />
+    <Compile Include="Repository\RowMapper\TransactionRowMapper.cs" />
     <Compile Include="UI\Authentication\AuthenticationPage.cs" />
     <Compile Include="UI\Authentication\AuthenticationPage.xaml.cs">
       <DependentUpon>AuthenticationPage.xaml</DependentUpon>

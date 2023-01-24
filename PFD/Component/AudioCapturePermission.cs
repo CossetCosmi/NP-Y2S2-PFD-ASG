@@ -3,7 +3,6 @@ using System.Threading.Tasks;
 using Windows.Media.Capture;
 using Windows.UI.Popups;
 
-
 namespace PFD.Component
 {
     internal static class AudioCapturePermission
