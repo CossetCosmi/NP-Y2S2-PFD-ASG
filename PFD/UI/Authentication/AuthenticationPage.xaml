@@ -24,6 +24,8 @@
             <TextBlock x:Name="tbPageTitle"
                        Text="&lt;Page Title&gt;"
                        Style="{StaticResource PageTitleStyle}"/>
+            <TextBlock x:Name="tbMicrophoneStatus" Style="{StaticResource PageTitleStyle}"/>
+            <TextBlock x:Name="tbCameraStatus" Style="{StaticResource PageTitleStyle}"/>
         </StackPanel>
         <!--#endregion Page Header -->
 

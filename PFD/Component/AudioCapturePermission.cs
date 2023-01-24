@@ -6,7 +6,7 @@ using Windows.UI.Popups;
 
 namespace PFD.Component
 {
-    internal class AudioCapturePermission
+    internal static class AudioCapturePermission
     {
         private static int NoCaptureDevicesHResult { get; } = -1072845856;
 
@@ -16,24 +16,29 @@ namespace PFD.Component
 
             try
             {
-                await new MediaCapture().InitializeAsync(new MediaCaptureInitializationSettings
-                {
-                    StreamingCaptureMode = StreamingCaptureMode.Audio,
-                    MediaCategory = MediaCategory.Speech
-                });
+                await
+                    new MediaCapture().InitializeAsync(
+                        new MediaCaptureInitializationSettings
+                        {
+                            StreamingCaptureMode = StreamingCaptureMode.Audio,
+                            MediaCategory = MediaCategory.Speech
+                        });
 
                 hasPermission = true;
             }
             catch (TypeLoadException)
             {
-                await new MessageDialog("Media player components are unavailable.").ShowAsync();
+                MessageDialog messageDialog = new MessageDialog("Media player components are unavailable.");
+                await messageDialog.ShowAsync();
             }
             catch (UnauthorizedAccessException) { }
             catch (Exception exception)
             {
                 if (exception.HResult != NoCaptureDevicesHResult)
                     throw;
-                else await new MessageDialog("No Audio Capture devices are present on this system.").ShowAsync();
+
+                MessageDialog messageDialog = new MessageDialog("No Audio Capture devices are present on this system.");
+                await messageDialog.ShowAsync();
             }
 
             return hasPermission;
