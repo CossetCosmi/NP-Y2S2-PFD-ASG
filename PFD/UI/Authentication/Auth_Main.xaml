@@ -1,0 +1,34 @@
+﻿<Page
+    x:Class="PFD.UI.Authentication.Auth_Main"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="8.23529411764706*"/>
+            <RowDefinition Height="1.76470588235294*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="5*"/>
+        </Grid.ColumnDefinitions>
+
+        <Button x:Name="BtnAuthByCard" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="450" Height="600" Background="#FFEE534F" CornerRadius="10,10,10,10">
+            <StackPanel>
+                <Image Source="/Assets/Images/Insert Logo.png"/>
+                <TextBlock Text="Insert Card" FontSize="40" FontWeight="Bold" HorizontalAlignment="Center" Foreground="White"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="BtnAuthByQr" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="450" Height="600" Background="#FFEE534F" CornerRadius="10,10,10,10">
+            <StackPanel>
+                <Image Source="/Assets/Images/Scan Logo.png"/>
+                <TextBlock Text="Insert Card" FontSize="40" FontWeight="Bold" HorizontalAlignment="Center" Foreground="White"/>
+            </StackPanel>
+        </Button>
+    </Grid>
+</Page>
