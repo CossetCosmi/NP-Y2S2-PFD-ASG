@@ -3,6 +3,7 @@ using PFD.Repository;
 using System;
 using System.Collections.Generic;
 using Windows.UI.Core;
+using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
 namespace PFD.UI.Setting
@@ -19,13 +20,31 @@ namespace PFD.UI.Setting
         private List<Card> CardList { get; set; }
         #endregion Properties
 
+        #region Static Properties
+        public static SettingPage Current;
+        #endregion Static Properties
+
+        #region Speech Text State Listener
+        public List<Action<bool>> SpeechTextStateListenerList { get; } = new List<Action<bool>> { };
+        #endregion Speech Text State Listener
+
         public SettingPage()
         {
+            Current = this;
+
             InitializeComponent();
             InitializeAccountList();
         }
 
         private void InitializeAccountList() => AccountList = AccountRepository.FindAll();
+
+        private void cbSpeech_Click(object sender, RoutedEventArgs e)
+        {
+            foreach (Action<bool> execute in SpeechTextStateListenerList)
+            {
+                execute((bool)(sender as CheckBox).IsChecked);
+            }
+        }
 
         private async void cbAccount_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {

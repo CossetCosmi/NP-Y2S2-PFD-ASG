@@ -39,6 +39,7 @@
                   HorizontalAlignment="Left" 
                   VerticalAlignment="Center"
                   Content="Show/Hide Speech"
+                  Click="cbSpeech_Click"
                   Margin="0,20,0,0"/>
 
         <TextBlock x:Name="tbAccount"
