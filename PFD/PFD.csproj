@@ -119,15 +119,20 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Component\AudioCapturePermission.cs" />
     <Compile Include="Cryptography\PasswordService.cs" />
     <Compile Include="Cryptography\IPasswordService.cs" />
-    <Compile Include="MainPage.xaml.cs">
-      <DependentUpon>MainPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Model\IModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\RowMapper\IRowMapper.cs" />
     <Compile Include="Repository\RowMapper\RowMapper.cs" />
+    <Compile Include="UI\Authentication\AuthenticationPage.cs" />
+    <Compile Include="UI\Authentication\AuthenticationPage.xaml.cs">
+      <DependentUpon>AuthenticationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Authentication\Auth_Main.xaml.cs">
+      <DependentUpon>Auth_Main.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -135,6 +140,36 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Images\Backspace Logo.png" />
+    <Content Include="Assets\Images\Balance Logo.png" />
+    <Content Include="Assets\Images\Bill Logo.png" />
+    <Content Include="Assets\Images\Card and Receipt Logo.png" />
+    <Content Include="Assets\Images\Card Logo.png" />
+    <Content Include="Assets\Images\Cash Logo.png" />
+    <Content Include="Assets\Images\Change Language Logo.png" />
+    <Content Include="Assets\Images\CPF Service Logo.png" />
+    <Content Include="Assets\Images\Deposit Logo.png" />
+    <Content Include="Assets\Images\Error Logo.png" />
+    <Content Include="Assets\Images\Exit Logo.png" />
+    <Content Include="Assets\Images\Insert Card Logo.png" />
+    <Content Include="Assets\Images\Insert Logo.png" />
+    <Content Include="Assets\Images\Keypad Logo.png" />
+    <Content Include="Assets\Images\Kill Switch Logo.png" />
+    <Content Include="Assets\Images\Man ATM Logo.png" />
+    <Content Include="Assets\Images\More Logo.png" />
+    <Content Include="Assets\Images\OCBC Logo.png" />
+    <Content Include="Assets\Images\Progress Logo.png" />
+    <Content Include="Assets\Images\QR Code Logo.png" />
+    <Content Include="Assets\Images\Receipt Logo.png" />
+    <Content Include="Assets\Images\Scan Logo.png" />
+    <Content Include="Assets\Images\Scan QR Logo.png" />
+    <Content Include="Assets\Images\Slide to Activate Logo.png" />
+    <Content Include="Assets\Images\Success Logo.png" />
+    <Content Include="Assets\Images\Thumbprint Logo.png" />
+    <Content Include="Assets\Images\Transfer Logo.png" />
+    <Content Include="Assets\Images\Warning Logo.png" />
+    <Content Include="Assets\Images\Withdraw Logo.png" />
+    <Content Include="Assets\Images\Woman ATM Logo.png" />
     <Content Include="Assets\SQLs\script.sql" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\Images\Archive\LockScreenLogo.scale-200.png" />
@@ -150,9 +185,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="MainPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <Page Include="UI\Authentication\AuthenticationPage.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Authentication\Auth_Main.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Style.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Template\Base.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
@@ -163,6 +210,7 @@
       <Version>6.2.14</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
