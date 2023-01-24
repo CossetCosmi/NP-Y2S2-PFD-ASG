@@ -45,7 +45,52 @@
             </SplitView.Pane>
             <SplitView.Content>
                 <RelativePanel>
-                    <Frame x:Name="fvContent" Style="{StaticResource Auth_FrameContentStyle}"/>
+                    <Grid Style="{StaticResource Auth_Content_GridStyle}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1.5*"/>
+                            <RowDefinition Height="8.5*"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.5*"/>
+                            <ColumnDefinition Width="4.0*"/>
+                            <ColumnDefinition Width="5.0*"/>
+                            <ColumnDefinition Width="0.5*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4">
+                            <Grid.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#BFEE543F"/>
+                                    <GradientStop Color="#00D9D9D9" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Grid.Background>
+                        </Grid>
+
+                        <StackPanel Grid.Row="0" Grid.Column="1" VerticalAlignment="Bottom" Margin="0,0,0,10">
+                            <Image Source="/Assets/Images/OCBC Logo.png" Height="45" HorizontalAlignment="Left"/>
+                            <TextBlock x:Name="TbSubpageTitle" Text="&lt;Page Title&gt;" FontSize="48" FontWeight="SemiBold"/>
+                        </StackPanel>
+
+                        <Button x:Name="btnLanguage"
+                                Grid.Row="0"
+                                Grid.Column="2"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Bottom"
+                                Background="White"
+                                BorderBrush="Black"
+                                BorderThickness="1"
+                                CornerRadius="10,10,10,10"
+                                Width="300"
+                                Height="70"
+                                Margin="0,0,0,10">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="/Assets/Images/Change Language Logo.png"/>
+                                <TextBlock Text="Change Language" FontWeight="SemiBold" FontSize="21" Foreground="#FFE53935" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+                        <Frame x:Name="fvContent" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" />
+                    </Grid>
                     <TextBlock x:Name="tbSpeech" Style="{StaticResource Auth_SpeechTextStyle}"/>
                 </RelativePanel>
             </SplitView.Content>
