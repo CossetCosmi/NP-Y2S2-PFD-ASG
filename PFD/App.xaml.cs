@@ -10,6 +10,8 @@ namespace PFD
 {
     sealed partial class App : Application
     {
+        public static readonly string CONNECTION_STRING = @"Server=127.0.0.1; Database=PFD; User Id=SA; Password=*&Dy73h1u;";
+
         public App()
         {
             InitializeComponent();
