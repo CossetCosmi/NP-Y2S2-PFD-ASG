@@ -25,7 +25,7 @@ namespace PFD.UI.Setting
         #endregion Static Properties
 
         #region Speech Text State Listener
-        public List<Action<bool>> SpeechTextStateListenerList { get; } = new List<Action<bool>> { };
+        private List<Action<bool>> SpeechTextStateListenerList { get; } = new List<Action<bool>> { };
         #endregion Speech Text State Listener
 
         public SettingPage()
@@ -37,6 +37,10 @@ namespace PFD.UI.Setting
         }
 
         private void InitializeAccountList() => AccountList = AccountRepository.FindAll();
+
+        public void AddSpeechTextStateListener(Action<bool> execute) => SpeechTextStateListenerList.Add(execute);
+
+        public void RemoveSpeechTextStateListener(Action<bool> execute) => SpeechTextStateListenerList.Remove(execute);
 
         private void cbSpeech_Click(object sender, RoutedEventArgs e)
         {
