@@ -7,120 +7,56 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
+    <Grid Style="{StaticResource Auth_Content_GridStyle}">
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.5*"/>
-            <RowDefinition Height="9.5*"/>
+            <RowDefinition Height="2.0*"/>
+            <RowDefinition Height="7.0*"/>
+            <RowDefinition Height="1.0*"/>
         </Grid.RowDefinitions>
 
-        <!--#region Page Header -->
-        <StackPanel Grid.Row="0" Orientation="Horizontal">
-            <Viewbox>
-                <ToggleButton x:Name="btnMenu"
-                              Click="BtnMenu_Click"
-                              Style="{StaticResource Auth_Menu_MenuButtonStyle}">
-                </ToggleButton>
-            </Viewbox>
-            <TextBlock x:Name="tbPageTitle"
-                       Text="&lt;Page Title&gt;"
-                       Style="{StaticResource PageTitleStyle}"/>
-            <TextBlock x:Name="tbMicrophoneStatus" Style="{StaticResource PageTitleStyle}"/>
-            <TextBlock x:Name="tbCameraStatus" Style="{StaticResource PageTitleStyle}"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="4.0*"/>
+            <ColumnDefinition Width="5.0*"/>
+            <ColumnDefinition Width="0.5*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#BFEE543F"/>
+                    <GradientStop Color="#00D9D9D9" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+        </Grid>
+
+        <StackPanel Grid.Row="0" Grid.Column="1" VerticalAlignment="Bottom" Margin="0,0,0,10">
+            <Image Source="/Assets/Images/OCBC Logo.png" Height="45" HorizontalAlignment="Left"/>
+            <TextBlock x:Name="tbSubpageTitle" Text="Authentication" FontSize="48" FontWeight="SemiBold"/>
         </StackPanel>
-        <!--#endregion Page Header -->
 
-        <!--#region Page Content -->
-        <SplitView x:Name="svAuthentication" Grid.Row="1" DisplayMode="Inline">
-            <SplitView.Pane>
-                <RelativePanel>
-                    <TextBlock x:Name="tbMenuTitle"
-                               Text="Setting(s)"
-                               Style="{StaticResource Auth_Menu_TitleStyle}"/>
-                    <StackPanel Style="{StaticResource Auth_Menu_ContentStyle}">
-                        <CheckBox x:Name="cbSpeechText"
-                                  IsChecked="{x:Bind IsSpeechVisible}"
-                                  Content="Show/Hide Speech"
-                                  Click="CbSpeechText_Click"
-                                  Style="{StaticResource Auth_Menu_SettingItemStyle}"/>
-                    </StackPanel>
-                </RelativePanel>
-            </SplitView.Pane>
-            <SplitView.Content>
-                <RelativePanel>
-                    <Grid Style="{StaticResource Auth_Content_GridStyle}">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="1.5*"/>
-                            <RowDefinition Height="8.5*"/>
-                        </Grid.RowDefinitions>
-
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="0.5*"/>
-                            <ColumnDefinition Width="4.0*"/>
-                            <ColumnDefinition Width="5.0*"/>
-                            <ColumnDefinition Width="0.5*"/>
-                        </Grid.ColumnDefinitions>
-
-                        <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4">
-                            <Grid.Background>
-                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                    <GradientStop Color="#BFEE543F"/>
-                                    <GradientStop Color="#00D9D9D9" Offset="1"/>
-                                </LinearGradientBrush>
-                            </Grid.Background>
-                        </Grid>
-
-                        <StackPanel Grid.Row="0" Grid.Column="1" VerticalAlignment="Bottom" Margin="0,0,0,10">
-                            <Image Source="/Assets/Images/OCBC Logo.png" Height="45" HorizontalAlignment="Left"/>
-                            <TextBlock x:Name="tbSubpageTitle" Text="&lt;Page Title&gt;" FontSize="48" FontWeight="SemiBold"/>
-                        </StackPanel>
-
-                        <Button x:Name="btnLanguage"
-                                Grid.Row="0"
-                                Grid.Column="2"
-                                HorizontalAlignment="Right"
-                                VerticalAlignment="Bottom"
-                                Background="White"
-                                BorderBrush="Black"
-                                BorderThickness="1"
-                                CornerRadius="10,10,10,10"
-                                Width="300"
-                                Height="70"
-                                Margin="0,0,0,10">
-                            <StackPanel Orientation="Horizontal">
-                                <Image Source="/Assets/Images/Change Language Logo.png"/>
-                                <TextBlock Text="Change Language" FontWeight="SemiBold" FontSize="21" Foreground="#FFE53935" VerticalAlignment="Center"/>
-                            </StackPanel>
-                        </Button>
-                        <Frame x:Name="fvContent" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" />
-                    </Grid>
-                    <TextBlock x:Name="tbSpeech" Style="{StaticResource Auth_SpeechTextStyle}"/>
-                </RelativePanel>
-            </SplitView.Content>
-        </SplitView>
-        <!--#endregion Page Content -->
-        
-        <!--#region Subpage Popup Content -->
-        <Button x:Name="btnQr"
+        <Button x:Name="btnLanguage"
                 Grid.Row="0"
-                Grid.Column="0"
-                Grid.RowSpan="2"
-                Background="#7F000000" 
-                Canvas.ZIndex="1" 
-                Visibility="Collapsed" 
-                HorizontalAlignment="Stretch"
-                VerticalAlignment="Stretch"
-                Click="BtnQr_Click">
-            <Grid Background="White" CornerRadius="25,25,25,25" Width="1200" Height="700">
-                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <Image Source="/Assets/Images/QR Code Logo.png" Width="500" Height="500" RenderTransformOrigin="0.5,0.5">
-                        <Image.RenderTransform>
-                            <CompositeTransform ScaleX="1.5" ScaleY="1.5"/>
-                        </Image.RenderTransform>
-                    </Image>
-                    <TextBlock Text="Click anywhere on the screen to return" FontSize="32" FontWeight="Medium" HorizontalAlignment="Center" Margin="0,20,0,0"/>
-                </StackPanel>
-            </Grid>
+                Grid.Column="2"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Bottom"
+                Style="{StaticResource NormalButtonStyle}"
+                Margin="0,0,0,10">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Assets/Images/Change Language Logo.png"/>
+                <TextBlock Text="Change Language" FontWeight="SemiBold" FontSize="21" VerticalAlignment="Center"/>
+            </StackPanel>
         </Button>
-        <!--#endregion Subpage Popup Content-->
+
+        <Frame x:Name="fvContent" 
+               Grid.Row="1" 
+               Grid.Column="1"
+               Grid.ColumnSpan="2" />
+
+        <TextBlock x:Name="tbSpeech" 
+                   Grid.Row="2"
+                   Grid.Column="0" 
+                   Grid.ColumnSpan="4" 
+                   Style="{StaticResource Auth_SpeechTextStyle}"/>
     </Grid>
 </Page>

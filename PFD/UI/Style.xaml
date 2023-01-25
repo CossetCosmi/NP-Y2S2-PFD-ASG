@@ -2,9 +2,10 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-    <!-- Large: 32, 21, Small: 14, 11-->
+    <!-- Large: 48, 32, 21, Small: 14, 11-->
 
-    <Style x:Key="PageTitleStyle" TargetType="TextBlock" BasedOn="{StaticResource TitleTextBlockStyle}">
+
+        <Style x:Key="PageTitleStyle" TargetType="TextBlock" BasedOn="{StaticResource TitleTextBlockStyle}">
         <Setter Property="FontSize" Value="14"/>
         <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
@@ -48,15 +49,15 @@
     </Style>
 
     <Style x:Key="Auth_SpeechTextStyle" TargetType="TextBlock">
-        <Setter Property="Visibility" Value="Collapsed"/>
-        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Visibility" Value="Visible"/>
+        <Setter Property="FontSize" Value="21"/>
         <Setter Property="Margin" Value="0,20,0,20"/>
-        <Setter Property="RelativePanel.AlignBottomWithPanel" Value="True"/>
-        <Setter Property="RelativePanel.AlignHorizontalCenterWithPanel" Value="True"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="TextWrapping" Value="WrapWholeWords"/>
     </Style>
 
-    <Style x:Key="FooterButtonStyle" TargetType="Button">
+    <Style x:Key="NormalButtonStyle" TargetType="Button">
         <Setter Property="FontSize" Value="32"/>
         <Setter Property="FontWeight" Value="SemiBold"/>
         <Setter Property="Foreground" Value="#FFE53935"/>
@@ -67,4 +68,5 @@
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="BorderBrush" Value="#000000"/>
     </Style>
+
 </ResourceDictionary>
